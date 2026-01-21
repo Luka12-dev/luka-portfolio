@@ -1,0 +1,33 @@
+#checkbox {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition-duration: 0.6s;
+}
+
+
+.bars {
+  width: 100%;
+  height: 4px;
+  background-color: var(--color-light);
+  border-radius: 4px;
+}
+
+#bar2 {
+  transition-duration: 0.8s;
+}
+
+#bar1,
+#bar3 {
+  width: 70%;
+}
