@@ -1,0 +1,142 @@
+@import "tailwindcss";
+
+button {
+  cursor: pointer;
+}
+/* html {
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+} */
+
+@theme {
+  --color-primary: #5d275d;
+  --color-analogous: #5d2741;
+  --color-accent: #f8c162;
+  --color-light: #f4f4f4;
+  --color-dark: #2e2e2e;
+  --color-bg: #0c0c0c;
+  --color-gray: #bdbdbd;
+  --breakpoint-xs: 360px;
+  /* Serif */
+  --font-serif: "Playfair Display", serif;
+  /* Sans */
+  --font-sans: "Inria Sans", sans-serif;
+  /* Display */
+  --font-display: "Clash Display", sans-serif;
+
+  --font-array: "Array", sans-serif;
+}
+.array {
+  font-family: var(--font-array);
+}
+.sans {
+  font-family: var(--font-sans);
+}
+.serif {
+  font-family: var(--font-serif);
+}
+.display {
+  font-family: var(--font-display);
+}
+
+:root {
+  color-scheme: light dark;
+  color: var(--color-light);
+  background-color: var(--color-bg);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-light);
+}
+
+h1,
+h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+
+  line-height: 0.9;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+@media (max-width: 768px) {
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+.pixel-container {
+  position: relative;
+  max-width: 31.25px;
+  max-height: 31.25px;
+}
+
+.pixel {
+  image-rendering: crisp-edges;
+  object-fit: cover;
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 0;
+}
+
+.pixel-container::after {
+  content: "";
+  background-color: var(--color-bg);
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  box-shadow:
+    inset 0 0 3px var(--color-accent),
+    inset 0 0 10px rgba(255, 162, 0, 0.638);
+  filter: brightness(1.2);
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in;
+}
+
+.pixel-container:hover::after {
+  opacity: 1;
+}
+
+.navbar-icon {
+  @apply h-4 hover:scale-150 group-hover:scale-110 duration-300 transition-all cursor-pointer hover:px-2 group-hover:m-1 hover:opacity-80;
+}
+
+.form-input {
+  @apply border-b border-light mb-2 py-2 px-4 focus:outline-none w-[70%] z-10 xs:text-sm sm:text-base focus:bg-dark transition-colors;
+}
+
+.contact-button {
+  @apply cursor-pointer py-1.5 px-3 border z-10 border-light rounded-sm active:bg-dark/10 transition-colors drop-shadow-primary drop-shadow xs:text-sm md:text-base;
+}
+
+.sticky-component {
+  position: sticky;
+  top: 0;
+  background: lightblue;
+  padding: 10px;
+  transition: background 0.3s;
+}
+
+.sticky-active {
+  background: lightcoral; /* Change color when sticky */
+}
